@@ -1,0 +1,23 @@
+.footer-container {
+    background-color: $color-primary !important;
+    font-family: $font-poppins;
+    font-size: 1.1rem;
+    &_text {
+        color: $color-white;
+    }
+    &_firstRow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &_secondRow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &_thirdRow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
