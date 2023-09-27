@@ -1,12 +1,12 @@
 import {Routes, Route} from 'react-router-dom'
-import NavBar from "../pages/LandingPage/Navbar/Navbar";
+import Landing from "../pages/LandingPage/LandingPage";
 
 export const AppRouter = () => {
   return (
     <>
       {/* Landing page */}
       <Routes>
-        <Route path="/" element={<NavBar />} />
+        <Route path="/" element={<Landing />} />
       </Routes>
     </>
   );

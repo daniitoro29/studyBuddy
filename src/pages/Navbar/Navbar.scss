@@ -1,0 +1,36 @@
+.navbar-container {
+  background-color: $color-primary !important;
+  font-family: $font-poppins;
+  &_text {
+    color: $color-white;
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+  & a {
+    font-size: 18px;
+  }
+  & button {
+    border-radius: 20px;
+    width: 148px;
+    height: 44px;
+    color: $color-primary;
+    border: none;
+  }
+  &_button1 {
+    background-color: $color-tertiary;
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+  &_button2 {
+    background-color: $color-secondary;
+    &:hover {
+      background-color:  $color-tertiary;
+    }
+  }
+  &_image {
+    background-color: $color-white;
+    border-radius: 50%;
+  }
+}
