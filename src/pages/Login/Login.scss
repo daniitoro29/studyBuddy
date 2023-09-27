@@ -1,0 +1,30 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary !important;
+    font-family: $font-poppins;
+    &_containerLogin{
+        border-radius: .7rem;   
+        background-color: $color-secondary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        width: 80%;
+    }
+    &_titleAndArrowBack{
+        margin-top: 1rem;
+        display: flex;
+        margin-right: 30%;
+        justify-content: space-between;
+        width: 50%;
+        font-size: 2rem;
+    }
+    &_formAndSvg{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 2rem;
+    }
+}

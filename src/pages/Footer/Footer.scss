@@ -3,10 +3,6 @@
     background-color: $color-primary !important;
     font-family: $font-poppins;
     padding: 2rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
     &_column{
         display: flex;
         flex-direction: column;
