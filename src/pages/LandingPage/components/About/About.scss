@@ -1,0 +1,21 @@
+.about-container {
+  background-color: $color-white;
+  height: 450px;
+  &_first {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &_image {
+    width: 59px;
+  }
+
+  &_title {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  &_card {
+    width: 20rem !important;
+  }
+}

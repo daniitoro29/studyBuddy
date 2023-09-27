@@ -2,6 +2,7 @@ import React from "react";
 import  Navbar  from "../Navbar/Navbar";
 import  Footer  from "../Footer/Footer";
 import Information from "./components/Information/Information";
+import About from "./components/About/About";
 
 const baseClassName = "landing-container";
 
@@ -11,6 +12,7 @@ function Landing () {
     <div className={baseClassName}>
         <Navbar/>
         <Information/>
+        <About/>
         <Footer/>
     </div>
     
