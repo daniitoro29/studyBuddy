@@ -1,6 +1,8 @@
 @import '../Navbar/Navbar';
 @import '../Footer/Footer';
 
+@import 'components/Information/Information';
+
 .landing-container {
     background-color: $color-secondary;
     height: 100vh;
