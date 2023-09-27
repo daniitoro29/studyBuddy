@@ -11,7 +11,7 @@ function Landing () {
     <div className={baseClassName}>
         <Navbar/>
         <Information/>
-        {/* <Footer/> */}
+        <Footer/>
     </div>
     
     </>
