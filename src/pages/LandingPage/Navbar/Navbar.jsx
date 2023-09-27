@@ -23,9 +23,11 @@ const NAVBAR_LINKS = [
   },
 ];
 
+const baseClassName = 'navbar-container';
+
 function renderNavbarLinks() {
   return NAVBAR_LINKS.map((link) => (
-    <Navbar.Brand key={link.label} href={link.href}>
+    <Navbar.Brand key={link.label} href={link.href} className={`${baseClassName}_text`}>
       {link.label}
     </Navbar.Brand>
   ));
@@ -33,7 +35,7 @@ function renderNavbarLinks() {
 
 function NavBar() {
   return (
-    <Navbar className="bg-body-tertiary navbar_container">
+    <Navbar className={`bg-body-tertiary ${baseClassName}`}>
       <Container>
         <img
           src={logo}
@@ -42,10 +44,10 @@ function NavBar() {
           className="d-inline-block align-top"
           alt="React Bootstrap logo"
         />
-        <Navbar.Brand href="#home">StudyBuddy</Navbar.Brand>
+        <Navbar.Brand href="#home" className={`${baseClassName}_text`}>StudyBuddy</Navbar.Brand>
         {renderNavbarLinks()}
-        <Button variant="outline-success">Registrate</Button>
-        <Button variant="outline-success">Iniciar sesión</Button>
+        <Button variant="outline-success" className={`${baseClassName}_button1`}>Registrate</Button>
+        <Button variant="outline-success" className={`${baseClassName}_button2`}>Iniciar sesión</Button>
       </Container>
     </Navbar>
   );
