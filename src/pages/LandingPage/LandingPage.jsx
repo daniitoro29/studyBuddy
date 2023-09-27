@@ -1,18 +1,16 @@
 import React from "react";
 import  Navbar  from "../Navbar/Navbar";
-import  Footer  from "../Footer/Footer";
-import Container from "react-bootstrap/Container";
+import Footer from "../Footer/Footer";
 
 const baseClassName = "landing-container";
 
 function Landing () {
   return (
     <>
-    <Container className={baseClassName}>
+    <div className={baseClassName}>
         <Navbar/>
         <Footer/>
-    </Container>
-    
+    </div>
     </>
 
   );

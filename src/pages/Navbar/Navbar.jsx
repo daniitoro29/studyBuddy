@@ -50,10 +50,13 @@ function NavBar() {
             alt="React Bootstrap logo"
           />
         </div>
-        <Navbar.Brand href="#home" className={`${baseClassName}_text`}>
+        <Navbar.Brand href="#home" className={`${baseClassName}_text `}>
           StudyBuddy
         </Navbar.Brand>
+        <div className={`${baseClassName}_links`}>
+
         {renderNavbarLinks()}
+        </div>
         <Button
           variant="outline-success"
           className={`${baseClassName}_button1`}
