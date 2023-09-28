@@ -2,10 +2,12 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import img1 from "../../assets/wel.svg";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom"
 
 const baseClassName = "welcome-container";
 
 const Welcome = () => {
+    const navigate = useNavigate();
   return (
     <div className={baseClassName}>
       <Card style={{ margin: 0, width: "70%", height: "auto" }}>
@@ -28,6 +30,7 @@ const Welcome = () => {
             <Button
               variant="outline-success"
               className={`${baseClassName}_button1`}
+              /* onClick={() => navigate("/questions")} */
             >
               Empezar
             </Button>

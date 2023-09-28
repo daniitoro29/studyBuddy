@@ -31,7 +31,7 @@ export const userLogin = async ({ email, password }, navigate) => {
             });
         }
     } catch (error) {
-        if (error.response.status === 400) {
+        if (error) {
             Swal.fire({
                 icon: "error",
                 title: 'Por favor verifica tus datos',
