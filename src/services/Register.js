@@ -35,7 +35,7 @@ export const createUser = async ({ nombre,
             Swal.fire({
                 title: 'Usuario creado exitosamente',
                 icon: "success",
-                timer: 1500,
+                timer: 10000,
                 showConfirmButton: false,
             }).then(() => {
                 console.log('Usuario creado exitosamente', response)

@@ -19,7 +19,7 @@ export const userLogin = async ({ email, password }, navigate) => {
             Swal.fire({
                 title: 'Datos ingresados correctamente',
                 icon: "success",
-                timer: 1500,
+                timer: 10000,
                 showConfirmButton: false,
             }).then(() => {
                 const authToken = response.data.token;
