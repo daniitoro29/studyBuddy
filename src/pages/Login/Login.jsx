@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import padlock from "../../assets/cohete.svg";
+import arrow from "../../assets/arrowBack.svg";
 import { userLogin } from "../../services/Login";
 import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import NavBar from "../Navbar/Navbar";
 
 const baseClassName = 'login-container';
 
@@ -37,8 +37,16 @@ function Login() {
 
   return (
     <>
-    <NavBar />
-    <div className={`row justify-content-center ${baseClassName}`} style={{height:"88vh"}}>
+    <div className="div_container">
+      <a href="/">
+    <img
+          src={arrow}
+          className={`d-inline-block align-center ${baseClassName}_imagen`}
+          style={{ alignSelf: "start", height:"59px"}}
+          alt="Candado"
+        />
+        </a>
+    <div className={`row justify-content-center ${baseClassName}`} style={{height:"100vh"}}>
       <div className={`col-md-4 ${baseClassName}_img`}>
         <img
           src={padlock}
@@ -69,6 +77,7 @@ function Login() {
           </div>
         </Form>
       </div>
+    </div>
     </div>
     </>
   );

@@ -9,7 +9,7 @@ const baseClassName = "about-container";
 
 const About = () => {
   return (
-    <div className={baseClassName}>
+    <div className={baseClassName} id="about">
       <h1 className={`${baseClassName}_title`}>Sobre nosotros</h1>
       <section className={`${baseClassName}_first`}>
         <Card style={{ width: "20rem", height:"320px"}} >

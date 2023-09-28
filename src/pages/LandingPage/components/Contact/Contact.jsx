@@ -7,7 +7,7 @@ const baseClassName = "contact-container";
 
 const Contact = () => {
   return (
-    <div className={`row justify-content-center ${baseClassName}`}>
+    <div className={`row justify-content-center ${baseClassName}`} id="contact-us">
       <div className={`col-md-5 ${baseClassName}_img`}>
         <img
           src={email}

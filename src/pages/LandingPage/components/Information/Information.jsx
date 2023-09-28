@@ -23,12 +23,14 @@ const Information = () => {
           ¡Desbloquea tu potencial y construye un futuro STEM sólido con
           nosotros!
         </h2>
+        <a href="#about">
         <Button
           variant="outline-success"
           className={`${baseClassName}_button1`}
         >
           Conocenos
         </Button>
+        </a>
       </section>
       <div className={`${baseClassName}_second`}>
       <img
