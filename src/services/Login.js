@@ -14,7 +14,6 @@ export const userLogin = async ({ correo, contrasena }, navigate) => {
             correo,
             contrasena,
         });
-
         if (response.status === 200 && response.data) {
             Swal.fire({
                 title: response.data.messagge,
@@ -22,10 +21,10 @@ export const userLogin = async ({ correo, contrasena }, navigate) => {
                 timer: 1500,
                 showConfirmButton: false,
             }).then(() => {
-                const authToken = response.data.token;
+/*                 const authToken = response.data.token;
                 localStorage.setItem("token", authToken);
                 const usuario = jwtDecode(authToken);
-                localStorage.setItem("name", usuario.nameAdmin)
+                localStorage.setItem("name", usuario.nameAdmin) */
                 location.href = "/welcome";
 
             });
