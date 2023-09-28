@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-primary !important;
+    background-color: $color-secondary !important;
     font-family: $font-poppins;
     &_containerLogin{
         border-radius: .7rem;   
-        background-color: $color-secondary;
+        background-color: $color-white;
         display: flex;
         flex-direction: column;
         align-items: center;

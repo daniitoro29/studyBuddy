@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import arrowBack from "../../assets/arrowBack.svg";
-import padlock from "../../assets/padlock.svg";
+import padlock from "../../assets/cohete.svg";
 import { userLogin } from "../../services/Login";
 import { useNavigate } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import NavBar from "../Navbar/Navbar";
 
 const baseClassName = 'login-container';
 
@@ -13,7 +15,7 @@ function Login() {
     password: '',
   });
 
-  const handleInputChange = ({target}) => {
+  const handleInputChange = ({ target }) => {
     setFormData({
       ...formData,
       [target.name]: target.value,
@@ -34,49 +36,41 @@ function Login() {
   };
 
   return (
-    <div className={`${baseClassName}`}>
-      <div className={`${baseClassName}_containerLogin`}>
-        <div className={`${baseClassName}_titleAndArrowBack`}>
-          <img src={arrowBack} alt="Volver" />
-          <h1>Inicio de Sesión</h1>
-        </div>
-        <div>
-          <div className={`${baseClassName}_formAndSvg`}>
-            <img src={padlock} alt="Candado" onClick={() => navigate('/')}/>
-            <div>
-              <form onSubmit={handle} className={`${baseClassName}_form`}>
-                <div className={`${baseClassName}_inputs`}>
-                  <label>Correo Electrónico</label>
-                  <br />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Ingrese el correo electrónico"
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className={`${baseClassName}_inputs`}>
-                  <label>Contraseña</label>
-                  <br />
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Ingrese la contraseña"
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <button type="submit" className={`${baseClassName}_button1`} onClick={handleLogin}>
-                  Iniciar Sesión
-                </button>
-                <a href="/register">Regístrate</a>
-              </form>
-            </div>
+    <>
+    <NavBar />
+    <div className={`row justify-content-center ${baseClassName}`} style={{height:"88vh"}}>
+      <div className={`col-md-4 ${baseClassName}_img`}>
+        <img
+          src={padlock}
+          className={`d-inline-block align-center ${baseClassName}_imagen`}
+          style={{ alignSelf: "center", height:"60vh"}}
+          alt="Candado"
+        />
+      </div>
+      <div className={`col-md-7 ${baseClassName}_form`}>
+        <Form>
+          <h2 className={`${baseClassName}_title`}>Inicio de Sesión</h2>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Correo electrónico</Form.Label>
+            <Form.Control type="email" placeholder="Ingrese el correo electrónico" onChange={handleInputChange} required />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control type="password" placeholder="Ingrese la contraseña" onChange={handleInputChange} required />
+          </Form.Group>
+          <div className={`${baseClassName}_btn`}>
+            <Button
+              variant="outline-success"
+              className={`${baseClassName}_button1`}
+              onClick={handleLogin}
+            >
+              Iniciar Sesión
+            </Button>
           </div>
-        </div>
+        </Form>
       </div>
     </div>
+    </>
   );
 }
 
