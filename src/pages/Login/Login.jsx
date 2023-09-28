@@ -12,25 +12,23 @@ function Login() {
     email: '',
     password: '',
   });
-  const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = ({target}) => {
     setFormData({
       ...formData,
-      [name]: value,
+      [target.name]: target.value,
     });
   };
 
-  const handleSubmit = (event) => {
+  function handle(event) {
     event.preventDefault();
-    setIsLoading(true); // Establecer estado de carga al iniciar sesión
+  }
+
+  const handleLogin = () => {
     userLogin(formData, navigate)
       .then(() => {
-        setIsLoading(false); // Establecer estado de carga a false después de recibir la respuesta 200
       })
       .catch((error) => {
-        setIsLoading(false); // Establecer estado de carga a false en caso de error
         console.log(error);
       });
   };
@@ -46,16 +44,16 @@ function Login() {
           <div className={`${baseClassName}_formAndSvg`}>
             <img src={padlock} alt="Candado" />
             <div>
-              <form onSubmit={handleSubmit} className={`${baseClassName}_form`}>
+              <form onSubmit={handle} className={`${baseClassName}_form`}>
                 <div className={`${baseClassName}_inputs`}>
                   <label>Correo Electrónico</label>
                   <br />
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="Ingrese el correo electrónico"
-                    value={formData.email}
                     onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div className={`${baseClassName}_inputs`}>
@@ -65,14 +63,14 @@ function Login() {
                     type="password"
                     name="password"
                     placeholder="Ingrese la contraseña"
-                    value={formData.password}
                     onChange={handleInputChange}
+                    required
                   />
                 </div>
-                <button type="submit" className={`${baseClassName}_button1`}>
+                <button type="submit" className={`${baseClassName}_button1`} onClick={handleLogin}>
                   Iniciar Sesión
                 </button>
-                <a href="">Regístrate</a>
+                <a href="/register">Regístrate</a>
               </form>
             </div>
           </div>

@@ -55,12 +55,16 @@ function NavBar() {
           StudyBuddy
         </Navbar.Brand>
         <div className={`${baseClassName}_links`}>{renderNavbarLinks()}</div>
+        <NavLink
+          to={"/register"}
+        >
         <Button
           variant="outline-success"
           className={`${baseClassName}_button1`}
         >
           Registrate
         </Button>
+        </NavLink>
         <NavLink
           to={"/login"}
         >
