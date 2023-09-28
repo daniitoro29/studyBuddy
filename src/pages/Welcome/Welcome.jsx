@@ -10,14 +10,16 @@ const Welcome = () => {
     const navigate = useNavigate();
   return (
     <div className={baseClassName}>
-      <Card style={{ margin: 0, width: "70%", height: "auto" }}>
+      <Card >
         <div className={`${baseClassName}_img`}>
+            <a href="/">
           <Card.Img
             variant="top"
             src={img1}
             className={`${baseClassName}_image d-block mx-auto`}
             style={{ width: 300 }}
           />
+          </a>
         </div>
         <Card.Body>
 

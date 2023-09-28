@@ -11,7 +11,7 @@ const About = () => {
     <div className={baseClassName} id="about">
       <h1 className={`${baseClassName}_title`}>Sobre nosotros</h1>
       <section className={`${baseClassName}_first`}>
-        <Card style={{ width: "70%", height:"320px"}} >
+        <Card style={{ width: "20rem", height:"320px"}} >
           <div className={`${baseClassName}_img`}>
             <Card.Img
               variant="top"
