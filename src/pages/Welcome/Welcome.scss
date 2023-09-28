@@ -1,7 +1,7 @@
 .welcome-container {
     display: flex;
     justify-content: center;
-
+    width: "70%";
     margin:1rem;
     & .card {
         border: none;
@@ -9,6 +9,8 @@
         box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         background-color: $color-secondary;
+        height: "auto";
+        margin: 0;
     }
     &_button1 {
         border-radius: 50px;
