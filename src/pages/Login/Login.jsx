@@ -16,19 +16,23 @@ function Login() {
           <div className={`${baseClassName}_formAndSvg`}>
             <img src={padlock} />
             <div>
-              <form action="" method='post'>
-                <div>
+              <form action="" method='post' className={`${baseClassName}_form`}>
+                <div className={`${baseClassName}_inputs`}>
                   <label>Correo Electrónico</label>
                   <br />
-                  <input type="text" placeholder='Ingrese el correo electrónico'/>
+                  <input type="text" placeholder='Ingrese el correo electrónico' />
                 </div>
-                <div>
+                <div className={`${baseClassName}_inputs`}>
                   <label>Contraseña</label>
                   <br />
-                  <input type="text" placeholder='Ingrese la contraseña'/>
+                  <input type="text" placeholder='Ingrese la contraseña' />
                 </div>
-                <input type="submit" value="Iniciar Sesión" />
-                <br />
+                <button
+                  variant="outline-success"
+                  className={`${baseClassName}_button1`}
+                >
+                  Iniciar Sesión
+                </button>
                 <a href="">Registrate</a>
               </form>
             </div>
