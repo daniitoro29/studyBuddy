@@ -1,0 +1,24 @@
+.register-container {
+padding: 2rem;
+& button {
+    margin-top: 3rem;
+    border-radius: 20px;
+    min-width: 148px;
+    min-height: 44px;
+    color: $color-primary;
+    border: none;
+  }
+  &_button1 {
+    background-color: $color-tertiary;
+    margin-right: 1rem;
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+  &_button2 {
+    background-color: $color-secondary;
+    &:hover {
+      background-color:  $color-tertiary;
+    }
+  }
+}

@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 const NAVBAR_LINKS = [
   {
     label: "Inicio",
-    href: "#home",
+    href: "/",
   },
   {
     label: "Recursos públicos",
@@ -51,7 +51,7 @@ function NavBar() {
             alt="React Bootstrap logo"
           />
         </div>
-        <Navbar.Brand href="#home" className={`${baseClassName}_text icon`}>
+        <Navbar.Brand href="/" className={`${baseClassName}_text icon`}>
           StudyBuddy
         </Navbar.Brand>
         <div className={`${baseClassName}_links`}>{renderNavbarLinks()}</div>

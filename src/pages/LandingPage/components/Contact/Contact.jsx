@@ -21,19 +21,19 @@ const Contact = () => {
           <h2 className={`${baseClassName}_title`}>Dejanos tu mensaje</h2>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Nombre</Form.Label>
-            <Form.Control type="text" placeholder="Cristian" />
+            <Form.Control type="text" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Apellido</Form.Label>
-            <Form.Control type="text" placeholder="Muñoz" />
+            <Form.Control type="text"  />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Correo electrónico</Form.Label>
-            <Form.Control type="email" placeholder="cristianmunoz@gmail.com" />
+            <Form.Control type="email"  />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Teléfono</Form.Label>
-            <Form.Control type="tel" placeholder="3154225345" />
+            <Form.Control type="tel"  />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Mensaje</Form.Label>
