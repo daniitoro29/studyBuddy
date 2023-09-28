@@ -3,6 +3,7 @@ import  Navbar  from "../Navbar/Navbar";
 import  Footer  from "../Footer/Footer";
 import Information from "./components/Information/Information";
 import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
 
 const baseClassName = "landing-container";
 
@@ -13,6 +14,7 @@ function Landing () {
         <Navbar/>
         <Information/>
         <About/>
+        <Contact/>
         <Footer/>
     </div>
     
