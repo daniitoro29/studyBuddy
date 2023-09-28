@@ -3,6 +3,7 @@ import { Form, Row, Col, Button, Container } from 'react-bootstrap';
 import { createUser } from "../../services/Register";
 import NavBar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import Card from "react-bootstrap/Card";
 
 const baseClassName = 'register-container';
 
@@ -44,13 +45,14 @@ function Register() {
         <>
         <NavBar/>
         <Container>
-
+        <Card style={{ height:"auto", margin:"2rem"}} className="mx-auto" >
+ 
         <div className={`${baseClassName}`}>
             <div className={`${baseClassName}_containerRegister`}>
                 <h1 className="text-center">Registro</h1>
                 <Form onSubmit={handleSubmit} className={`${baseClassName}_form`}>
                     <Row>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="nombre">
                                 <Form.Label>Nombre</Form.Label>
                                 <Form.Control
@@ -62,7 +64,7 @@ function Register() {
                                 />
                             </Form.Group>
                         </Col>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="apellido">
                                 <Form.Label>Apellido</Form.Label>
                                 <Form.Control
@@ -76,7 +78,7 @@ function Register() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="fechaNacimiento">
                                 <Form.Label>Fecha de Nacimiento</Form.Label>
                                 <Form.Control
@@ -87,7 +89,7 @@ function Register() {
                                 />
                             </Form.Group>
                         </Col>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="correo">
                                 <Form.Label>Correo Electrónico</Form.Label>
                                 <Form.Control
@@ -101,7 +103,7 @@ function Register() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="contrasena">
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control
@@ -113,7 +115,7 @@ function Register() {
                                 />
                             </Form.Group>
                         </Col>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="confirmarContrasena">
                                 <Form.Label>Confirmar Contraseña</Form.Label>
                                 <Form.Control
@@ -127,7 +129,7 @@ function Register() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="programa">
                                 <Form.Label>Programa</Form.Label>
                                 <Form.Control
@@ -142,7 +144,7 @@ function Register() {
                                 </Form.Control>
                             </Form.Group>
                         </Col>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="tipoDocumento">
                                 <Form.Label>Tipo de Documento</Form.Label>
                                 <Form.Control
@@ -160,7 +162,7 @@ function Register() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <Form.Group controlId="numeroDocumento">
                                 <Form.Label>Número de Documento</Form.Label>
                                 <Form.Control
@@ -186,6 +188,7 @@ function Register() {
                 </Form>
             </div>
         </div>
+        </Card>
         </Container>
         <Footer/>
         </>

@@ -27,7 +27,7 @@ function Login() {
   }
 
   const handleLogin = () => {
-    userLogin(formData, navigate)
+   userLogin(formData, navigate)
       .then(() => {
       })
       .catch((error) => {
@@ -48,15 +48,15 @@ function Login() {
         />
       </div>
       <div className={`col-md-7 ${baseClassName}_form`}>
-        <Form>
+        <Form onSubmit={handle}>
           <h2 className={`${baseClassName}_title`}>Inicio de Sesión</h2>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Correo electrónico</Form.Label>
-            <Form.Control type="email" placeholder="Ingrese el correo electrónico" onChange={handleInputChange} required />
+            <Form.Control type="email"  name="email" placeholder="Ingrese el correo electrónico" onChange={handleInputChange} required />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" placeholder="Ingrese la contraseña" onChange={handleInputChange} required />
+            <Form.Control type="password" name="password" placeholder="Ingrese la contraseña" onChange={handleInputChange} required />
           </Form.Group>
           <div className={`${baseClassName}_btn`}>
             <Button
