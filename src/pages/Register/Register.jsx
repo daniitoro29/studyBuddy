@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
+
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
-import { createUser } from "../../services/Register";
+import Card from "react-bootstrap/Card";
+
 import NavBar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import Card from "react-bootstrap/Card";
+
+import { createUser } from "../../services/Register";
+
+import { useNavigate } from "react-router-dom";
 
 const baseClassName = 'register-container';
 
 function Register() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         nombre: '',
         apellido: '',
@@ -17,26 +24,28 @@ function Register() {
         confirmarContrasena: '',
         ficha: '',
         programa: '',
-        tipoDocumento: 'Cedula',
+        tipoDocumento: "Cedula",
         numeroDocumento: '',
     });
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
+    const handleInputChange = ({ target }) => {
         setFormData({
-            ...formData,
-            [name]: value,
+          ...formData,
+          [target.name]: target.value,
         });
-    };
+      };
 
-    const handleSubmit = (event) => {
+    const handle = (event) => {
         event.preventDefault();
+      }
+
+    const handleSubmit = () => {
         createUser(formData, navigate)
             .then(() => {
-                setIsLoading(false);
+
             })
             .catch((error) => {
-                setIsLoading(false);
+
                 console.log(error);
             });
     };
@@ -50,7 +59,7 @@ function Register() {
         <div className={`${baseClassName}`}>
             <div className={`${baseClassName}_containerRegister`}>
                 <h1 className="text-center">Registro</h1>
-                <Form onSubmit={handleSubmit} className={`${baseClassName}_form`}>
+                <Form onSubmit={handle} className={`${baseClassName}_form`}>
                     <Row>
                         <Col sm={6}>
                             <Form.Group controlId="nombre">
@@ -122,7 +131,6 @@ function Register() {
                                     type="password"
                                     name="confirmarContrasena"
                                     placeholder="Confirmar Contraseña"
-                                    value={formData.confirmarContrasena}
                                     onChange={handleInputChange}
                                 />
                             </Form.Group>
@@ -153,7 +161,7 @@ function Register() {
                                     value={formData.tipoDocumento}
                                     onChange={handleInputChange}
                                 >
-                                    <option value="Cedula">Cédula de Ciudadanía</option>
+                                    <option value="Cedula" selected>Cédula de Ciudadanía</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                     <option value="TarjetaIdentidad">Tarjeta de Identidad</option>
                                     <option value="CedulaExtranjeria">Cédula de Extranjería</option>
@@ -174,9 +182,21 @@ function Register() {
                                 />
                             </Form.Group>
                         </Col>
+                        <Col sm={6}>
+                            <Form.Group controlId="ficha">
+                                <Form.Label>Ficha</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    name="ficha"
+                                    placeholder="Ficha"
+                                    value={formData.ficha}
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                        </Col>
                     </Row>
                     <div className="text-center">
-                        <Button variant="primary" type="submit" className={`${baseClassName}_button1`}>
+                        <Button variant="primary" type="submit" className={`${baseClassName}_button1`} onClick={handleSubmit}>
                             Registrar
                         </Button>
                         <a href="/">

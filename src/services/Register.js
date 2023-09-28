@@ -17,27 +17,28 @@ export const createUser = async ({ nombre,
     programa,
     tipoDocumento,
     numeroDocumento }, navigate) => {
+    
     try {
         const response = await axios.post(`${URL}/api/user`, {
-            nombre,
-            apellido,
-            fechaNacimiento,
-            correo,
-            contrasena,
+            name: nombre,
+            lastName: apellido,
+            dateBirth: fechaNacimiento,
+            email: correo,
+            password: contrasena,
             confirmarContrasena,
-            ficha,
-            programa,
-            tipoDocumento,
-            numeroDocumento
+            course: ficha,
+            program: programa,
+            typeDocument: tipoDocumento,
+            numberDocument: numeroDocumento
         });
         if (response.status === 200 && response.data) {
             Swal.fire({
-                title: response.data.messagge,
+                title: 'Usuario creado exitosamente',
                 icon: "success",
                 timer: 1500,
                 showConfirmButton: false,
             }).then(() => {
-                console.log('Usuario creado exitosamente')
+                console.log('Usuario creado exitosamente', response)
                 location.href = "/welcome";
 
             });
@@ -49,5 +50,6 @@ export const createUser = async ({ nombre,
                 title: 'Por favor verifique sus datos.',
             });
         }
+        console.log('Error ****', error);
     }
 };

@@ -22,7 +22,7 @@ function Login() {
     });
   };
 
-  function handle(event) {
+  const handle = (event) => {
     event.preventDefault();
   }
 
