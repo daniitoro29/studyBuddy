@@ -1,6 +1,9 @@
 import React from "react";
 import  Navbar  from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import Login from "../Login/Login";
+import Information from "./components/Information/Information";
+import About from "./components/About/About";
 
 const baseClassName = "landing-container";
 
@@ -9,8 +12,12 @@ function Landing () {
     <>
     <div className={baseClassName}>
         <Navbar/>
+        <Login />
+        <Information/>
+        <About/>
         <Footer/>
     </div>
+    
     </>
 
   );

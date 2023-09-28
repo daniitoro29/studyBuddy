@@ -37,7 +37,7 @@ function renderNavbarLinks() {
   ));
 }
 
-function NavBar() {
+function  NavBar() {
   return (
     <Navbar className={`bg-body-tertiary ${baseClassName}`}>
       <Container>
@@ -50,13 +50,10 @@ function NavBar() {
             alt="React Bootstrap logo"
           />
         </div>
-        <Navbar.Brand href="#home" className={`${baseClassName}_text `}>
+        <Navbar.Brand href="#home" className={`${baseClassName}_text icon`}>
           StudyBuddy
         </Navbar.Brand>
-        <div className={`${baseClassName}_links`}>
-
-        {renderNavbarLinks()}
-        </div>
+        <div className={`${baseClassName}_links`}>{renderNavbarLinks()}</div>
         <Button
           variant="outline-success"
           className={`${baseClassName}_button1`}

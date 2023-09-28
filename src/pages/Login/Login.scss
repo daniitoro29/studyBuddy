@@ -1,0 +1,65 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary !important;
+    font-family: $font-poppins;
+    &_containerLogin{
+        border-radius: .7rem;   
+        background-color: $color-secondary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        width: 80%;
+    }
+    &_titleAndArrowBack{
+        margin-top: 1rem;
+        display: flex;
+        margin-right: 30%;
+        justify-content: space-between;
+        width: 50%;
+        font-size: 2rem;
+    }
+    &_formAndSvg{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 2rem;
+    }
+    &_form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &_inputs input{
+        width:33rem;
+        border-radius: .2rem;
+        border: .18rem solid #D9D9D9;
+    }
+    & button {
+        margin-top: 2.5rem;
+        border-radius: 20px;
+        min-width: 148px;
+        min-height: 44px;
+        color: $color-primary;
+        border: none;
+    }
+    &_button1 {
+        background-color: $color-tertiary;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        width: 17rem;
+        &:hover {
+            background-color: $color-orange-dark;
+        }
+    }
+    div{
+        margin-top: 1rem;
+    }
+    a{
+        margin-top: .8rem;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+}
