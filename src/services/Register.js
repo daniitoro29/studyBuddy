@@ -1,5 +1,4 @@
 import axios from "axios";
-import jwtDecode from "jwt-decode";
 import Swal from "sweetalert2";
 const URL = "https://studybuddy-backend.vercel.app";
 
@@ -8,11 +7,28 @@ const URL = "https://studybuddy-backend.vercel.app";
 * @param correo: user email
 * @param contrasena: user password
 */
-export const userLogin = async ({ correo, contrasena }, navigate) => {
+export const createUser = async ({ nombre,
+    apellido,
+    fechaNacimiento,
+    correo,
+    contrasena,
+    confirmarContrasena,
+    ficha,
+    programa,
+    tipoDocumento,
+    numeroDocumento }, navigate) => {
     try {
         const response = await axios.post(`${URL}/api/user`, {
+            nombre,
+            apellido,
+            fechaNacimiento,
             correo,
             contrasena,
+            confirmarContrasena,
+            ficha,
+            programa,
+            tipoDocumento,
+            numeroDocumento
         });
         if (response.status === 200 && response.data) {
             Swal.fire({
@@ -21,10 +37,7 @@ export const userLogin = async ({ correo, contrasena }, navigate) => {
                 timer: 1500,
                 showConfirmButton: false,
             }).then(() => {
-/*                 const authToken = response.data.token;
-                localStorage.setItem("token", authToken);
-                const usuario = jwtDecode(authToken);
-                localStorage.setItem("name", usuario.nameAdmin) */
+                console.log('Usuario creado exitosamente')
                 location.href = "/welcome";
 
             });

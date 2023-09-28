@@ -42,7 +42,7 @@ function Login() {
         </div>
         <div>
           <div className={`${baseClassName}_formAndSvg`}>
-            <img src={padlock} alt="Candado" />
+            <img src={padlock} alt="Candado" onClick={() => navigate('/')}/>
             <div>
               <form onSubmit={handle} className={`${baseClassName}_form`}>
                 <div className={`${baseClassName}_inputs`}>
