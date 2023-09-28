@@ -1,0 +1,43 @@
+.contact-container {
+    font-family: $font-poppins;
+    padding: 3rem;
+
+    &_title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &_img {
+        display: flex;
+        align-items: center;
+    }
+
+    &_imagen {
+        width: 80% ;
+    }
+
+    &_form {
+        border-radius: 20px;
+        padding: 1rem 3rem;
+        background-color: $color-white;
+    }
+
+    &_button1 {
+        background-color: $color-tertiary;
+        border:none;
+        border-radius: 50px;
+        margin-right: 1rem;
+        color: $color-white;
+        width: 135px;
+        &:hover {
+          color: $color-white;
+          background-color: $color-primary;
+        }
+      }
+
+      &_btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+}

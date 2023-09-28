@@ -1,0 +1,41 @@
+.register-container {
+    font-family: $font-poppins;
+padding: 2rem;
+& h1 {
+    margin-bottom: 1rem;
+}
+&_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+& .form-label {
+    color: #4848488c;
+    font-size: 14px;
+}
+
+& .form-control {
+    color: #4848488c !important;
+}
+& button {
+    margin-top: 3rem;
+    border-radius: 20px;
+    min-width: 148px;
+    min-height: 44px;
+    color: $color-primary;
+    border: none;
+  }
+  &_button1 {
+    background-color: $color-tertiary;
+    margin-right: 1rem;
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+  &_button2 {
+    background-color: $color-secondary;
+    &:hover {
+      background-color:  $color-tertiary;
+    }
+  }
+}

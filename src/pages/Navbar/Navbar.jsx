@@ -3,11 +3,12 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import Button from "react-bootstrap/Button";
+import { NavLink } from "react-router-dom";
 
 const NAVBAR_LINKS = [
   {
     label: "Inicio",
-    href: "#home",
+    href: "/",
   },
   {
     label: "Recursos públicos",
@@ -37,7 +38,7 @@ function renderNavbarLinks() {
   ));
 }
 
-function  NavBar() {
+function NavBar() {
   return (
     <Navbar className={`bg-body-tertiary ${baseClassName}`}>
       <Container>
@@ -50,22 +51,31 @@ function  NavBar() {
             alt="React Bootstrap logo"
           />
         </div>
-        <Navbar.Brand href="#home" className={`${baseClassName}_text icon`}>
+        <Navbar.Brand href="/" className={`${baseClassName}_text icon`}>
           StudyBuddy
         </Navbar.Brand>
         <div className={`${baseClassName}_links`}>{renderNavbarLinks()}</div>
+        <NavLink
+          to={"/register"}
+        >
         <Button
           variant="outline-success"
           className={`${baseClassName}_button1`}
         >
           Registrate
         </Button>
-        <Button
-          variant="outline-success"
-          className={`${baseClassName}_button2`}
+        </NavLink>
+        <NavLink
+          to={"/login"}
         >
-          Iniciar sesión
-        </Button>
+          <Button
+            variant="outline-success"
+            className={`${baseClassName}_button2`}
+          >
+            Iniciar sesión
+          </Button>
+        </NavLink>
+
       </Container>
     </Navbar>
   );

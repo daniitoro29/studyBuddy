@@ -9,7 +9,7 @@ const baseClassName = "about-container";
 
 const About = () => {
   return (
-    <div className={baseClassName}>
+    <div className={baseClassName} id="about">
       <h1 className={`${baseClassName}_title`}>Sobre nosotros</h1>
       <section className={`${baseClassName}_first`}>
         <Card style={{ width: "20rem", height:"320px"}} >
@@ -37,11 +37,13 @@ const About = () => {
           </Card.Body>
         </Card>
         <Card style={{ width: "20rem", height:"320px" }}>
+        <div className={`${baseClassName}_img`}>
           <Card.Img
             variant="top"
             src={img1}
-            className={`${baseClassName}_image d-block mx-auto`}
+            className={`${baseClassName}_image d-block mx-auto `}
           />
+          </div>
           <Card.Body>
             <Card.Title className={`text-center`}>Nuestro impacto</Card.Title>
 
@@ -54,11 +56,13 @@ const About = () => {
           </Card.Body>
         </Card>
         <Card style={{ width: "20rem", height:"320px" }}>
+        <div className={`${baseClassName}_img`}>
           <Card.Img
             variant="top"
             src={img3}
             className={`${baseClassName}_image d-block mx-auto`}
           />
+           </div>
           <Card.Body>
             <Card.Title className={`text-center`}>Nuestro equipo</Card.Title>
 
