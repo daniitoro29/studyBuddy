@@ -37,7 +37,7 @@ function renderNavbarLinks() {
   ));
 }
 
-function NavBar() {
+function  NavBar() {
   return (
     <Navbar className={`bg-body-tertiary ${baseClassName}`}>
       <Container>
