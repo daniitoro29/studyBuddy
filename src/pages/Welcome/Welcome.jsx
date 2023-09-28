@@ -1,16 +1,42 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import Card from "react-bootstrap/Card";
+import img1 from "../../assets/wel.svg";
+import Button from "react-bootstrap/Button";
 
-const baseClassName = "landing-container";
+const baseClassName = "welcome-container";
 
 const Welcome = () => {
-    return (
-        <div className={baseClassName}>
-            <Navbar />
-            <Footer />
+  return (
+    <div className={baseClassName}>
+      <Card style={{ margin: 0, width: "70%", height: "70vh" }}>
+      <Card.Title className={`text-center`}>Bienvenido</Card.Title>
+        <div className={`${baseClassName}_img`}>
+          <Card.Img
+            variant="top"
+            src={img1}
+            className={`${baseClassName}_image d-block mx-auto`}
+            style={{ width: 400 }}
+          />
         </div>
-    );
-}
+        <Card.Body>
+
+          <Card.Text style={{ textAlign: "center" }}>
+            <h2>
+              ¡Descubre cómo StudyBuddy puede ayudarte a mejorar tus habilidades
+              matemáticas!
+            </h2>
+            <p>Haz clic aquí para comenzar el test de evaluación.</p>
+            <Button
+              variant="outline-success"
+              className={`${baseClassName}_button1`}
+            >
+              Conocenos
+            </Button>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
 
 export default Welcome;
