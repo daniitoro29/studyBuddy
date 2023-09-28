@@ -8,14 +8,13 @@ const baseClassName = "welcome-container";
 const Welcome = () => {
   return (
     <div className={baseClassName}>
-      <Card style={{ margin: 0, width: "70%", height: "70vh" }}>
-      <Card.Title className={`text-center`}>Bienvenido</Card.Title>
+      <Card style={{ margin: 0, width: "70%", height: "auto" }}>
         <div className={`${baseClassName}_img`}>
           <Card.Img
             variant="top"
             src={img1}
             className={`${baseClassName}_image d-block mx-auto`}
-            style={{ width: 400 }}
+            style={{ width: 300 }}
           />
         </div>
         <Card.Body>
@@ -30,7 +29,7 @@ const Welcome = () => {
               variant="outline-success"
               className={`${baseClassName}_button1`}
             >
-              Conocenos
+              Empezar
             </Button>
           </Card.Text>
         </Card.Body>
