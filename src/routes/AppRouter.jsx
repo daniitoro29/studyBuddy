@@ -1,12 +1,15 @@
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import Landing from "../pages/LandingPage/LandingPage";
+import Login from "../pages/Login/Login";
 
 export const AppRouter = () => {
   return (
     <>
-      {/* Landing page */}
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/welcome" element={<Login />} />
       </Routes>
     </>
   );

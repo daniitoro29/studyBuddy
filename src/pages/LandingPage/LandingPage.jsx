@@ -13,7 +13,6 @@ function Landing () {
     <>
     <div className={baseClassName}>
         <Navbar/>
-        <Login />
         <Information/>
         <About/>
         <Contact/>
