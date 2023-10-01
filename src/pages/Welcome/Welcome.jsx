@@ -2,12 +2,16 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import img1 from "../../assets/wel.svg";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom"
+
 
 const baseClassName = "welcome-container";
 
 const Welcome = () => {
-    const navigate = useNavigate();
+
+const handleNavigation = () => {
+  window.location.href = '/test';
+}
+
   return (
     <div className={baseClassName}>
       <Card >
@@ -32,7 +36,7 @@ const Welcome = () => {
             <Button
               variant="outline-success"
               className={`${baseClassName}_button1`}
-              /* onClick={() => navigate("/questions")} */
+              onClick={handleNavigation} 
             >
               Empezar
             </Button>

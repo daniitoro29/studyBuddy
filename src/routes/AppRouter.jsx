@@ -4,6 +4,7 @@ import Landing from "../pages/LandingPage/LandingPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Welcome from "../pages/Welcome/Welcome";
+import Test from "../pages/Welcome/Test/Test";
 
 export const AppRouter = () => {
   return (
@@ -13,6 +14,7 @@ export const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </>
   );
