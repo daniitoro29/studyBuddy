@@ -27,6 +27,7 @@ function Register() {
     tipoDocumento: "Cedula",
     numeroDocumento: "",
   });
+  const [message, setMessage] = useState('')
 
   const handleInputChange = ({ target }) => {
     setFormData({
@@ -81,7 +82,7 @@ function Register() {
   return (
     <>
       <NavBar />
-      <Container>
+      <Container className="w-60 mx-auto">
         <Card style={{ height: "auto", margin: "2rem" }} className="mx-auto">
           <div className={`${baseClassName}`}>
             <div className={`${baseClassName}_containerRegister`}>
@@ -101,6 +102,7 @@ function Register() {
                     formData.ficha === ""
                   ) {
                     e.preventDefault();
+                    setMessage('Por favor diligencie todos los datos')
                   } else {
                     setFormData({
                       nombre: "",
@@ -263,6 +265,10 @@ function Register() {
                     </Form.Group>
                   </Col>
                 </Row>
+                {
+                  message !== '' &&
+                <p className="text-center mx-auto register-paragraph">{message}</p>
+                }
                 <div className="text-center">
                   <Button
                     variant="primary"

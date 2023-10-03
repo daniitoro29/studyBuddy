@@ -41,7 +41,9 @@ function renderNavbarLinks() {
 function NavBar() {
   return (
     <Navbar className={`bg-body-tertiary ${baseClassName}`}>
-      <Container>
+      <Container fluid>
+        <div className={`${baseClassName}_logo`}>
+
         <div className={`${baseClassName}_image`}>
           <img
             src={logo}
@@ -54,27 +56,30 @@ function NavBar() {
         <Navbar.Brand href="/" className={`${baseClassName}_text icon`}>
           StudyBuddy
         </Navbar.Brand>
-        <div className={`${baseClassName}_links`}>{renderNavbarLinks()}</div>
-        <NavLink
-          to={"/register"}
-        >
-        <Button
-          variant="outline-success"
-          className={`${baseClassName}_button1`}
-        >
-          Registrate
-        </Button>
-        </NavLink>
-        <NavLink
-          to={"/login"}
-        >
-          <Button
-            variant="outline-success"
-            className={`${baseClassName}_button2`}
+        </div>
+        <div className={`${baseClassName}_clinks`}>
+          <div className={`${baseClassName}_links`}>{renderNavbarLinks()}</div>
+          <NavLink
+            to={"/register"}
           >
-            Iniciar sesión
-          </Button>
-        </NavLink>
+            <Button
+              variant="outline-success"
+              className={`${baseClassName}_button1`}
+            >
+              Registrate
+            </Button>
+          </NavLink>
+          <NavLink
+            to={"/login"}
+          >
+            <Button
+              variant="outline-success"
+              className={`${baseClassName}_button2`}
+            >
+              Iniciar sesión
+            </Button>
+          </NavLink>
+        </div>
 
       </Container>
     </Navbar>
