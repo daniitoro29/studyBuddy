@@ -10,6 +10,8 @@ const baseClassName = 'login-container';
 
 function Login() {
   const navigate = useNavigate();
+  const [isErrorPassword, setIsErrorPassword] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -27,58 +29,71 @@ function Login() {
   }
 
   const handleLogin = () => {
-   userLogin(formData, navigate)
-      .then(() => {
+    userLogin(formData, navigate)
+      .then((res) => {
+        if (res.error === " !Password incorrect! ") {
+          setIsErrorPassword(true)
+        } else if (res.error === " !User not found! ") {
+          setIsError(true)
+        }
       })
       .catch((error) => {
-        console.log(error);
+        console.error('Esta es la respuesta que me llega', error);
       });
+    setIsErrorPassword(false)
+    setIsError(false)
   };
 
   return (
     <>
-    <div className="div_container">
-      <a href="/">
-    <img
-          src={arrow}
-          className={`d-inline-block align-center ${baseClassName}_imagen`}
-          style={{ alignSelf: "start", height:"59px"}}
-          alt="Candado"
-        />
+      <div className="div_container">
+        <a href="/">
+          <img
+            src={arrow}
+            className={`d-inline-block align-center ${baseClassName}_imagen`}
+            style={{ alignSelf: "start", height: "59px" }}
+            alt="Candado"
+          />
         </a>
-    <div className={`row justify-content-center ${baseClassName}`} style={{height:"100vh"}}>
-      <div className={`col-md-4 ${baseClassName}_img`}>
-        <img
-          src={padlock}
-          className={`d-inline-block align-center ${baseClassName}_imagen`}
-          style={{ alignSelf: "center", height:"60vh"}}
-          alt="Candado"
-        />
-      </div>
-      <div className={`col-md-7 ${baseClassName}_form`}>
-        <Form onSubmit={handle}>
-          <h2 className={`${baseClassName}_title`}>Inicio de Sesión</h2>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Correo electrónico</Form.Label>
-            <Form.Control type="email"  name="email" placeholder="Ingrese el correo electrónico" onChange={handleInputChange} required />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-            <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" name="password" placeholder="Ingrese la contraseña" onChange={handleInputChange} required />
-          </Form.Group>
-          <div className={`${baseClassName}_btn`}>
-            <Button
-              variant="outline-success"
-              className={`${baseClassName}_button1`}
-              onClick={handleLogin}
-            >
-              Iniciar Sesión
-            </Button>
+        <div className={`row justify-content-center ${baseClassName}`} style={{ height: "100vh" }}>
+          <div className={`col-md-4 ${baseClassName}_img`}>
+            <img
+              src={padlock}
+              className={`d-inline-block align-center ${baseClassName}_imagen`}
+              style={{ alignSelf: "center", height: "60vh" }}
+              alt="Candado"
+            />
           </div>
-        </Form>
+          <div className={`col-md-7 ${baseClassName}_form`}>
+            <Form onSubmit={handle}>
+              <h2 className={`${baseClassName}_title`}>Inicio de Sesión</h2>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Correo electrónico</Form.Label>
+                <Form.Control type="email" name="email" placeholder="Ingrese el correo electrónico" onChange={handleInputChange} required isInvalid={isError} />
+                <Form.Control.Feedback type="invalid">
+                  Correo incorrecto
+                </Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control type="password" name="password" placeholder="Ingrese la contraseña" onChange={handleInputChange} required isInvalid={isErrorPassword} />
+                <Form.Control.Feedback type="invalid">
+                  Contraseña incorrecta
+                </Form.Control.Feedback>
+              </Form.Group>
+              <div className={`${baseClassName}_btn`}>
+                <Button
+                  variant="outline-success"
+                  className={`${baseClassName}_button1`}
+                  onClick={handleLogin}
+                >
+                  Iniciar Sesión
+                </Button>
+              </div>
+            </Form>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
     </>
   );
 }

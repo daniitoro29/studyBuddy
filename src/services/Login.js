@@ -32,10 +32,13 @@ export const userLogin = async ({ email, password }, navigate) => {
         }
     } catch (error) {
         if (error) {
-            Swal.fire({
-                icon: "error",
-                title: 'Por favor verifica tus datos',
-            });
+            return {
+                success: false,
+                message: "Por favor verifica tus datos",
+                error: error.response.data,
+            };
+
         }
+        console.log('Este es el error', error.response.data);
     }
 };
