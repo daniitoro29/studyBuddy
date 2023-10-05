@@ -66,7 +66,7 @@ const About = () => {
             <Card.Title className={`text-center`}>Nuestro equipo</Card.Title>
 
             <Card.Text>
-              Estamos un equipo de profesionales apasionados por la educación y
+              Somos un equipo de profesionales apasionados por la educación y
               las carreras STEM. Estamos comprometidos a ayudar a los
               estudiantes a alcanzar sus objetivos y hacer del mundo un lugar
               mejor.
