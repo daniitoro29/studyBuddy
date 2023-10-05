@@ -1,0 +1,20 @@
+.test-container {
+   padding: 5rem 7rem;
+
+
+   &_carousel {
+    height: 600px;
+    background-color: $color-secondary;
+    padding: 2rem;
+   }
+   &_img {
+    height: 200px;
+   }
+   & h3 {
+    color: black;
+   }
+ 
+   & label {
+    display: block !important;
+   }
+}
