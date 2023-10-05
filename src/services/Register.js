@@ -44,11 +44,13 @@ export const createUser = async ({ nombre,
             });
         }
     } catch (error) {
-        if (error.response.status === 400) {
-            Swal.fire({
-                icon: "error",
-                title: 'Por favor verifique sus datos.',
-            });
+        if (error) {
+            return {
+                success: false,
+                message: "Por favor verifica tus datos",
+                error: error.response.data,
+            };
+
         }
         console.log('Error ****', error);
     }
